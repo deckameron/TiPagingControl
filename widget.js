@@ -1,4 +1,4 @@
-var tabsCtrl = require("/services/PagingControl/tabs");
+var tabsCtrl = require("/tabs");
 var OS_IOS = Titanium.Platform.osname != "android";
 
 var iWidth,
