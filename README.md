@@ -47,26 +47,6 @@ window.add(pg);
 
 window.open();
 ```
-`index.tss`
-```javascript
-".container" : {
-	backgroundColor: "#fff",
-	layout: "vertical"
-},
-"#paging" : {
-	top: 0,
-	indicatorColor: "#09c",
-	tabs: true
-}
-```
-`index.js`
-```javascript
-function tabHandler(e) {
-  console.log('selected tab ', e.tab);
-}
-$.paging.setScrollableView($.scrollableView);
-$.index.open();
-```
 
 ## API
 
