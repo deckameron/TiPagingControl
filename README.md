@@ -2,7 +2,7 @@
 
 Alloy Widget for a page indication on ScrollableViews.
 
-![](https://github.com/manumaticx/pagingcontrol/blob/master/demo.gif?raw=true)
+![](https://raw.githubusercontent.com/manumaticx/pagingcontrol/master/demo.gif)
 
 ## Quick Start
 
