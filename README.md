@@ -6,13 +6,6 @@ Alloy Widget for a page indication on ScrollableViews.
 
 ## Quick Start
 
-### Installation
-
-Via gittio:
-```
-gittio install de.manumaticx.pagingcontrol
-```
-
 ### Usage
 
 Here's the complete example from the above gif:
