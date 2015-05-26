@@ -12,7 +12,7 @@ Here's the complete example from the above gif:
 
 `app.js`
 ```javascript
-var pagingControl = require("/services/PagingControl/widget");
+var pagingControl = require("/widget");
 
 var window = Titanium.UI.createWindow({
 	backgroundColor: "#fff",
