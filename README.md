@@ -1,6 +1,7 @@
 # TiPagingControl
 
-Alloy Widget for a page indication on ScrollableViews.
+CommonJS Module for a page indication on ScrollableViews.
+This code is a port from @manumatrix PagingControl Widget
 
 ![](https://raw.githubusercontent.com/manumaticx/pagingcontrol/master/demo.gif)
 
