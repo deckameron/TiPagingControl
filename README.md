@@ -61,7 +61,6 @@ $.index.open();
 #### Methods
 
 * `setScrollableView( )` - lets you set the scrollableView after creation
-* `cleanup( )` - call this to remove EventListeners
 
 #### Events
 
