@@ -1,4 +1,4 @@
-# PagingControl [![gittio](http://img.shields.io/badge/gittio-0.4.2-00B4CC.svg)](http://gitt.io/component/de.manumaticx.pagingcontrol)
+# TiPagingControl [![gittio](http://img.shields.io/badge/gittio-0.4.2-00B4CC.svg)](http://gitt.io/component/de.manumaticx.pagingcontrol)
 
 Alloy Widget for a page indication on ScrollableViews.
 
