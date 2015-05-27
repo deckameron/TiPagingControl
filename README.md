@@ -46,7 +46,12 @@ var pg = pagingControl.create({
     dividerColor: "#CCC",
     hasTabs: true,
     tabs: tabs,
-    //tabWidth: "60"
+    tabWidth: "120",
+    font:{
+    	fontSize: "16dp",			// The font family or specific font to use.
+    	fontFamily: "Robotto",		// Font size, in platform-dependent units. (pixels (px, pt, dp or dip, mm, in)
+    	fontWeight: "bold" 			// Valid values are "bold" or "normal".
+    },
 });
 window.add(pg);
 
@@ -67,6 +72,7 @@ window.open();
 * `hasTabs` (Boolean) - wether to use tabs or only the indicator
 * `tabWidth` - if not passed a default tabWidth of a quarter of the total with is used
 * `tabsColor` - tabs background color
+* `font` - font properties of the tabs
 * `tabs` - Views to be set as the ScrollableView views
 * `dividerColor` - Color of the divider between the tabs
 * `findScrollableView` - whether should widget is find scrollableView
