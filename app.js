@@ -2,7 +2,7 @@ var pagingControl = require("/services/PagingControl/widget");
 
 var window = Titanium.UI.createWindow({
 	backgroundColor: "#fff",
-    layout: "vertical"
+    	layout: "vertical"
 });
 
 var tabsProps = [
@@ -29,7 +29,7 @@ var pg = pagingControl.create({
     hasTabs: true,
     tabs: tabs,
     font:{
-    	fontSize: "16dp",			// The font family or specific font to use.
+    	fontSize: "16dp",		// The font family or specific font to use.
     	fontFamily: "Robotto",		// Font size, in platform-dependent units. (pixels (px, pt, dp or dip, mm, in)
     	fontWeight: "normal" 		// Valid values are "bold" or "normal".
     },
