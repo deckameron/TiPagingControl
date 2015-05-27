@@ -46,7 +46,7 @@ var pg = pagingControl.init({
     dividerColor: "#CCC",
     hasTabs: true,
     tabs: tabs,
-    //tabWidth: 60
+    //tabWidth: "60"
 });
 window.add(pg);
 
