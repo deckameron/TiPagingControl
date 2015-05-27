@@ -1,4 +1,4 @@
-var tabsCtrl = require("/tabs");
+var tabsCtrl = require("/services/PagingControl/tabs");
 var OS_IOS = Titanium.Platform.osname != "android";
 
 var iWidth,
@@ -29,7 +29,7 @@ function postLayout(callback) {
 	});
 }
 
-exports.init = function(args) {
+exports.create = function(args) {
 	
 	localArgs = args;
 	
@@ -69,12 +69,26 @@ exports.init = function(args) {
 	if (localArgs.findScrollableView == null) {
 		localArgs.findScrollableView = true;
 	};
+	if (localArgs.tabsColor == null) {
+		localArgs.tabsColor = "#EDEDED";
+	};
+	if (localArgs.dividerColor == null) {
+		localArgs.dividerColor = "#CCC";
+	};
+	if (localArgs.font == null) {
+		localArgs.font = {
+	    	fontSize: "12dp",
+	    	fontFamily: "Robotto",
+	    	fontWeight: "normal"
+	    };
+	};
+
 
 	// additional adjustments for tabs
 	if (localArgs.hasTabs) {
 		localArgs.tabProps = {
-			dividerColor : "#ccc",
-			width : localArgs.tabWidth
+			dividerColor : localArgs.dividerColor,
+			width : localArgs.tabWidth.toString()
 		};
 	}
 
@@ -86,11 +100,6 @@ exports.init = function(args) {
 			pagingcontrol[propsArray[prop]] = localArgs[propsArray[prop]];
 		}
 	}
-
-	// NOTE: THIS DOES NOT WORK ANYMORE WITH ALLOY 1.4.0
-	// try to find scrollable view as child of parent
-	// this should work, if pagingcontrol is scrollable view have the same parent
-	// otherwise you can pass it with args or setScrollableView
 
 	// assign passed reference of scrollable view
 	if (localArgs["scrollableView"]) {
@@ -104,11 +113,6 @@ exports.init = function(args) {
 		var titlesArray = [];
 		var tempViewArray = localArgs.tabs;
 		for (v in tempViewArray) {
-			
-			Titanium.API.info("+++++++++++==============++++++++++++");
-			Titanium.API.info(JSON.stringify(tempViewArray[v]));
-			Titanium.API.info("+++++++++++==============++++++++++++");
-			
 			titlesArray.push(tempViewArray[v].title);
 		}
 		tempViewArray = null;
@@ -116,17 +120,12 @@ exports.init = function(args) {
 		// create tabs
 		tabsCtrl = tabsCtrl.init({
 			tabs : localArgs.tabProps,
-			titles : titlesArray
+			titles : titlesArray,
+			font: localArgs.font
 		});
 		
-		Titanium.API.info("=====================================");
-		Titanium.API.info("=====================================");
-		Titanium.API.info(JSON.stringify(tabsCtrl));
-		Titanium.API.info("=====================================");
-		Titanium.API.info("=====================================");
-
 		// add tabs
-		pagingcontrol.setBackgroundColor('#EDEDED');
+		pagingcontrol.setBackgroundColor(localArgs.tabsColor);
 		pagingcontrol.add(tabsCtrl);
 
 		// add bottom border
@@ -134,23 +133,13 @@ exports.init = function(args) {
 			width : Ti.UI.FILL,
 			height : 2,
 			bottom : 0,
-			backgroundColor : '#EDEDED'
+			backgroundColor : localArgs.tabsColor
 		}));
 		
 		scrollableView.add(pagingcontrol);
 		
 		// add tab select listener
 		tabsCtrl.addEventListener('select', function(e) {
-			
-			Titanium.API.info("============= EVENT ==============");
-			Titanium.API.info(JSON.stringify(e));
-			Titanium.API.info("============= EVENT ==============");
-	
-			//tabsCtrl.fireEvent('select', {
-			//	tab : e.tab,
-			//	view : e.view
-			//});
-			
 			scrollableView.currentPage = e.tab;
 			indicator.setLeft(e.tab * iWidth);
 		});
@@ -203,11 +192,7 @@ function updateOffset(index) {
 	    maxOffset = tabsWidth - width,
 	    tabSpace = tabsWidth * index / scrollableView.views.length;
 	
-	Titanium.API.info("============= UpdateOffset ==============");
-	
 	if (width < tabsWidth) {
-		
-		Titanium.API.info("============= UpdateOffset _ width < tabsWidth ==============");
 		
 		var offset = tabSpace - localArgs.scrollOffset,
 		    offsetDp = offset < maxOffset ? offset : maxOffset,
@@ -247,5 +232,5 @@ exports.setScrollableView = function(_sv) {
 		return;
 	}
 	scrollableView = _sv;
-	postLayout(init);
+	postLayout(create);
 };
