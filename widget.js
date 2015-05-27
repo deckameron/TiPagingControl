@@ -140,8 +140,12 @@ exports.create = function(args) {
 		
 		// add tab select listener
 		tabsCtrl.addEventListener('select', function(e) {
-			scrollableView.currentPage = e.tab;
-			indicator.setLeft(e.tab * iWidth);
+			if(localArgs.fancyScroll){
+				scrollableView.scrollToView(e.tab);
+			}else{
+				scrollableView.currentPage = e.tab;
+				indicator.setLeft(e.tab * iWidth);	
+			}
 		});
 	}
 
