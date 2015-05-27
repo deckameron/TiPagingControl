@@ -69,7 +69,7 @@ window.open();
 
 #### Methods
 
-* `setScrollableView( )` - lets you set the scrollableView after creation
+* `create( )` - method to create the PagingControl
 
 #### Events
 
