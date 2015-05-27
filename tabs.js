@@ -2,7 +2,9 @@ var opts = {};
 var tabWidth;
 var OS_ANDROID = Titanium.Platform.osname == "android";
 
-var tabs = Titanium.UI.createView({layout:"horizontal"});
+var tabs = Titanium.UI.createView({
+	layout : "horizontal"
+});
 
 function getTabWidth() {
 	var displayWidth = Ti.Platform.displayCaps.platformWidth,
@@ -17,13 +19,13 @@ function getTabWidth() {
 	}
 }
 
- exports.init = function(args) {
-	
-	if(args){
+exports.init = function(args) {
+
+	if (args) {
 		Titanium.API.info(JSON.stringify(args));
 		Titanium.API.info(args);
 	}
-	
+
 	opts = args;
 
 	tabWidth = args.tabs.width || getTabWidth();
@@ -31,7 +33,7 @@ function getTabWidth() {
 	if ( typeof tabWidth == "string" && tabWidth.indexOf('%') > 0) {
 		var newWidth = parseInt(tabWidth.slice(0, tabWidth.indexOf('%'))) / 100;
 
-		if(OS_ANDROID){
+		if (OS_ANDROID) {
 			newWidth /= Ti.Platform.displayCaps.logicalDensityFactor;
 		};
 
@@ -52,7 +54,8 @@ function getTabWidth() {
 
 		t.add(Ti.UI.createLabel({
 			color : "#000",
-			text : args.titles[i]
+			text : args.titles[i],
+			font : args.font
 		}));
 
 		(function(index) {
@@ -76,7 +79,7 @@ function getTabWidth() {
 			}));
 		}
 	}
-	
+
 	return tabs;
 };
 
