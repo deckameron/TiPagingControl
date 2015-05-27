@@ -1,4 +1,4 @@
-var pagingControl = require("/widget");
+var pagingControl = require("/services/PagingControl/widget");
 
 var window = Titanium.UI.createWindow({
 	backgroundColor: "#fff",
@@ -18,16 +18,22 @@ var tabsProps = [
 var tabs = [];
 
 for(var i=0,j=tabsProps.length; i<j; i++){
-	Titanium.API.info("=====================================");
 	tabs.push(Titanium.UI.createView(tabsProps[i]));
 };
 
-var pg = pagingControl.init({
+var pg = pagingControl.create({
     top: 0,
     indicatorColor: "#09C",
+    tabsColor: "#DEDEDE",
+    dividerColor: "#CCC",
     hasTabs: true,
     tabs: tabs,
-    //tabWidth: 60
+    font:{
+    	fontSize: "16dp",			// The font family or specific font to use.
+    	fontFamily: "Robotto",		// Font size, in platform-dependent units. (pixels (px, pt, dp or dip, mm, in)
+    	fontWeight: "normal" 		// Valid values are "bold" or "normal".
+    },
+    tabWidth: "150"
 });
 window.add(pg);
 
