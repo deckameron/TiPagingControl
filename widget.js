@@ -177,9 +177,7 @@ function onScroll(e) {
 	// update the indicator position
 	indicator.setLeft(e.currentPageAsFloat * iWidth);
 
-	//if(localArgs.hasTabs){
-		updateOffset(e.currentPageAsFloat);
-	//};
+	updateOffset(e.currentPageAsFloat);
 }
 
 /**
