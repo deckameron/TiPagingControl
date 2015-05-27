@@ -39,7 +39,7 @@ for(var i=0,j=tabsProps.length; i<j; i++){
 	tabs.push(Titanium.UI.createView(tabsProps[i]));
 };
 
-var pg = pagingControl.init({
+var pg = pagingControl.create({
     top: 0,
     indicatorColor: "#09C",
     tabsColor: "#DEDEDE",
