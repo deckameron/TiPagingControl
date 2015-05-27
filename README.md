@@ -52,6 +52,7 @@ var pg = pagingControl.create({
     	fontFamily: "Robotto",		// Font size, in platform-dependent units. (pixels (px, pt, dp or dip, mm, in)
     	fontWeight: "bold" 			// Valid values are "bold" or "normal".
     },
+    fancyScroll: true
 });
 window.add(pg);
 
