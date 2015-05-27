@@ -55,6 +55,10 @@ window.open();
 
 ## API
 
+#### Methods
+
+* `create( )` - method to create the PagingControl
+
 #### Properties
 
 * `scrollableView` - reference the scrollableView
@@ -66,10 +70,6 @@ window.open();
 * `tabs` - Views to be set as the ScrollableView views
 * `dividerColor` - Color of the divider between the tabs
 * `findScrollableView` - whether should widget is find scrollableView
-
-#### Methods
-
-* `create( )` - method to create the PagingControl
 
 #### Events
 
