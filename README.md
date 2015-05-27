@@ -76,6 +76,7 @@ window.open();
 * `tabs` - Views to be set as the ScrollableView views
 * `dividerColor` - Color of the divider between the tabs
 * `findScrollableView` - whether should widget is find scrollableView
+* `fancyScroll` (Boolean) - when clicking on tab should generate a smooth or abrupt view change
 
 #### Events
 
