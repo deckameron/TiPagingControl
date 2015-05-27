@@ -42,6 +42,8 @@ for(var i=0,j=tabsProps.length; i<j; i++){
 var pg = pagingControl.init({
     top: 0,
     indicatorColor: "#09C",
+    tabsColor: "#DEDEDE",
+    dividerColor: "#CCC",
     hasTabs: true,
     tabs: tabs,
     //tabWidth: 60
