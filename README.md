@@ -74,6 +74,7 @@ window.open();
 * `hasTabs` (Boolean) - wether to use tabs or only the indicator
 * `tabWidth` - if not passed a default tabWidth of a quarter of the total with is used
 * `tabsColor` - tabs background color
+* `labelsColor` - color of the tabs labels,
 * `font` - font properties of the tabs
 * `tabs` - Views to be set as the ScrollableView views
 * `dividerColor` - Color of the divider between the tabs
