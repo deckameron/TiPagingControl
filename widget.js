@@ -3,7 +3,9 @@ var OS_IOS = Titanium.Platform.osname != "android";
 
 var iWidth,
     indicator,
-    localArgs;
+    localArgs,
+    anterior = 0,
+    atual = 0;
 
 var scrollableView = Titanium.UI.createScrollableView();
 
@@ -174,14 +176,25 @@ exports.create = function(args) {
  * Callback for scroll event
  */
 function onScroll(e) {
+	Titanium.API.info("Scroll");
+	
 	// restrict this to scrollableView to support nesting scrollableViews
 	if (e.source !== scrollableView){
 		return;
 	}
+	
 	// update the indicator position
 	indicator.setLeft(e.currentPageAsFloat * iWidth);
-
 	updateOffset(e.currentPageAsFloat);
+		
+	if(e.currentPage != undefined){
+		atual = e.currentPage;
+		if(anterior != atual){
+			this.getChildren()[0].getChildren()[0].getChildren()[anterior * 2].getChildren()[0].opacity = 0.4;
+			anterior = atual;
+		}
+		this.getChildren()[0].getChildren()[0].getChildren()[atual * 2].getChildren()[0].opacity = 1;
+	}
 }
 
 /**
