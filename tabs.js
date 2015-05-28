@@ -57,7 +57,7 @@ exports.init = function(args) {
 			text : args.titles[i],
 			font : args.font,
 			color: args.labelsColor,
-			opacity: 0.4
+			opacity: args.highlightEffect ? 0.4 : 1
 		}));
 
 		(function(index) {
