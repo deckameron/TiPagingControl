@@ -46,6 +46,7 @@ var pg = pagingControl.create({
     dividerColor: "#CCC",
     labelsColor: "#000",
     hasTabs: true,
+    highlightEffect : true,
     tabs: tabs,
     tabWidth: "120",
     font:{
@@ -80,6 +81,7 @@ window.open();
 * `dividerColor` - Color of the divider between the tabs
 * `findScrollableView` - whether should widget is find scrollableView
 * `fancyScroll` (Boolean) - when clicking on tab should generate a smooth or abrupt view change
+* `highlightEffect` (Boolean) - highlights the current tabs label
 
 #### Events
 
