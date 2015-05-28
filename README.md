@@ -84,6 +84,8 @@ window.open();
 #### Events
 
 * `select` - lets you know when a tab was pressed and which one was
+* `scroll` - fired repeatedly as the view is being scrolled
+* `scrollend` - fired when the view has stopped moving completely
 
 ## License
 
