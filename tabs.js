@@ -55,7 +55,9 @@ exports.init = function(args) {
 		t.add(Ti.UI.createLabel({
 			color : "#000",
 			text : args.titles[i],
-			font : args.font
+			font : args.font,
+			color: args.labelsColor,
+			opacity: 0.4
 		}));
 
 		(function(index) {
