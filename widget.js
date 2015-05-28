@@ -146,6 +146,12 @@ exports.create = function(args) {
 		
 		// add tab select listener
 		tabsCtrl.addEventListener('select', function(e) {
+			
+			scrollableView.fireEvent('select', {
+				tab : e.tab,
+				view : e.view
+			});
+			
 			if(localArgs.fancyScroll){
 				scrollableView.scrollToView(e.tab);
 			}else{
