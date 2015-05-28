@@ -80,6 +80,9 @@ exports.create = function(args) {
 	if (localArgs.labelsColor == null) {
 		localArgs.labelsColor = "#000";
 	};
+	if (localArgs.highlightEffect == null) {
+		localArgs.highlightEffect = false;
+	};
 	if (localArgs.font == null) {
 		localArgs.font = {
 	    	fontSize: "12dp",
@@ -127,7 +130,8 @@ exports.create = function(args) {
 			tabs : localArgs.tabProps,
 			titles : titlesArray,
 			font: localArgs.font,
-			labelsColor: localArgs.labelsColor
+			labelsColor: localArgs.labelsColor,
+			highlightEffect: localArgs.highlightEffect
 		});
 		
 		// add tabs
@@ -199,7 +203,7 @@ function onScroll(e) {
 		
 	if(e.currentPage != undefined){
 		atual = e.currentPage;
-		if(anterior != atual){
+		if(anterior != atual && localArgs.highlightEffect){
 			this.getChildren()[0].getChildren()[0].getChildren()[anterior * 2].getChildren()[0].opacity = 0.4;
 			anterior = atual;
 		}
