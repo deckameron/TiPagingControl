@@ -27,6 +27,7 @@ var pg = pagingControl.create({
     tabsColor: "#DEDEDE",
     dividerColor: "#CCC",
     labelsColor: "#000",
+    highlightEffect: true,
     hasTabs: true,
     tabs: tabs,
     font:{
