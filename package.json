@@ -4,6 +4,6 @@
         "lib": "."
     },
     "main": "com.upflix.pagingcontrol",
-    "name": "com.upflix.pagingcontrol",
+    "name": "TiPagingControl",
     "version": "1.0.0"
 }
