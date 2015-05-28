@@ -77,6 +77,9 @@ exports.create = function(args) {
 	if (localArgs.dividerColor == null) {
 		localArgs.dividerColor = "#CCC";
 	};
+	if (localArgs.labelsColor == null) {
+		localArgs.labelsColor = "#000";
+	};
 	if (localArgs.font == null) {
 		localArgs.font = {
 	    	fontSize: "12dp",
@@ -123,7 +126,8 @@ exports.create = function(args) {
 		tabsCtrl = tabsCtrl.init({
 			tabs : localArgs.tabProps,
 			titles : titlesArray,
-			font: localArgs.font
+			font: localArgs.font,
+			labelsColor: localArgs.labelsColor
 		});
 		
 		// add tabs
