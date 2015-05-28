@@ -1,0 +1,9 @@
+{
+    "description": "Google Play like paging control",
+    "directories": {
+        "lib": "."
+    },
+    "main": "com.upflix.pagingcontrol",
+    "name": "com.upflix.pagingcontrol",
+    "version": "1.0.0"
+}
