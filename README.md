@@ -74,7 +74,9 @@ window.open();
 * `indicatorColor` - Color of the indicator
 * `indicatorHeight` - Thickness the indicator
 * `hasTabs` (Boolean) - wether to use tabs or only the indicator
-* `tabWidth` - if not passed a default tabWidth of a quarter of the total with is used
+* `tabWidth` - width of a tab
+  * if not passed, a default tabWidth of a quarter of the total with is used
+  * if `auto` is used, tabs will fit the width
 * `tabsColor` - tabs background color
 * `labelsColor` - color of the tabs labels,
 * `font` - font properties of the tabs
