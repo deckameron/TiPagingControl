@@ -57,7 +57,7 @@ exports.create = function(args) {
 		localArgs.indicatorHeight = 5;
 	};
 	if (localArgs.hasTabs == null) {
-		localArgs.hasTabs = false;
+		localArgs.hasTabs = true;
 	};
 	if (localArgs.scrollOffset == null) {
 		localArgs.scrollOffset = 40;
