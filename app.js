@@ -28,7 +28,7 @@ var pg = pagingControl.create({
     dividerColor: "#CCC",
     labelsColor: "#000",
     highlightEffect: true,
-    hasTabs: true,
+    //hasTabs: true,
     tabs: tabs,
     font:{
     	fontSize: "16dp",		// The font family or specific font to use.
