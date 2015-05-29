@@ -1,4 +1,4 @@
-var pagingControl = require("/services/PagingControl/widget");
+var pagingControl = require("/PagingControl/widget");
 
 var window = Titanium.UI.createWindow({
 	backgroundColor: "#fff",
