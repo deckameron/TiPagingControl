@@ -156,7 +156,7 @@ exports.create = function(args) {
 				top: pagingcontrol.height,
 				left: 0,
 				right: 0,
-				image: "/PagingControl/shadowBar.png",
+				image: "/PagingControl/res/shadowBar.png",
 				height: Titanium.UI.SIZE,
 				touchEnabled: false
 			});
