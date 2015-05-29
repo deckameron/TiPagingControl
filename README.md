@@ -47,6 +47,7 @@ var pg = pagingControl.create({
     labelsColor: "#000",
     //hasTabs: true,
     highlightEffect : true,
+    shadowBar: true,
     tabs: tabs,
     tabWidth: "120",
     font:{
@@ -82,6 +83,7 @@ window.open();
 * `findScrollableView` - whether should widget is find scrollableView
 * `fancyScroll` (Boolean) - when clicking on tab should generate a smooth or abrupt view change
 * `highlightEffect` (Boolean) - highlights the current tab label
+* `shadowBar` (Boolean) - if the widget should show a drop shadow under the Paging Control
 
 #### Events
 
