@@ -45,7 +45,7 @@ var pg = pagingControl.create({
     tabsColor: "#DEDEDE",
     dividerColor: "#CCC",
     labelsColor: "#000",
-    hasTabs: true,
+    //hasTabs: true,
     highlightEffect : true,
     tabs: tabs,
     tabWidth: "120",
