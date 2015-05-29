@@ -148,6 +148,16 @@ exports.create = function(args) {
 		
 		scrollableView.add(pagingcontrol);
 		
+		var shadowBar = Titanium.UI.createImageView({
+			top: pagingcontrol.height,
+			left: 0,
+			right: 0,
+			image: "/PagingControl/shadowBar.png",
+			height: Titanium.UI.SIZE,
+			touchEnabled: false
+		});
+		scrollableView.add(shadowBar);
+		
 		// add tab select listener
 		tabsCtrl.addEventListener('select', function(e) {
 			
