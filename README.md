@@ -6,7 +6,7 @@ CommonJS Module for a page indication on ScrollableViews.
 
 This lib is a conversion of [pagingcontrol](https://github.com/manumaticx/pagingcontrol) into a non-Alloy javascript. I converted this code in order to help the developers who are not so familiarized with Titanium Alloy development.
 
-![](https://raw.githubusercontent.com/manumaticx/pagingcontrol/master/demo.gif)
+![](https://github.com/manumaticx/pagingcontrol/blob/master/demo_android.gif)
 
 ## Quick Start
 
