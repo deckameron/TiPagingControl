@@ -106,6 +106,10 @@ exports.init = function(args) {
 
 function RippleEffect(e) {
 
+	if(e && e.source){
+		e.source.touchEnabled = false;
+	}
+	
 	var OS_IOS = Titanium.Platform.osname != 'android';
 	var _x = (OS_IOS || e.dp) ? e.x : (e.x / Ti.Platform.displayCaps.logicalDensityFactor);
 	var _y = (OS_IOS || e.dp) ? e.y : (e.y / Ti.Platform.displayCaps.logicalDensityFactor);
@@ -116,7 +120,7 @@ function RippleEffect(e) {
 	var minHeightWidth = Math.min(e.source.rect.width, e.source.rect.height);
 
 	// Our circle that will be scaled up using 2dMartix.
-	var ripple = Titanium.UI.createView({
+	e.source.ripple = Titanium.UI.createView({
 		borderRadius : minHeightWidth / 2,
 		height : minHeightWidth,
 		width : minHeightWidth,
@@ -130,11 +134,13 @@ function RippleEffect(e) {
 		touchEnabled : false
 	});
 	// Add the ripple view inside the clicked view
-	e.source.add(ripple);
+	if(e && e.source){
+		e.source.add(e.source.ripple);
+	}
 
 	// Use chainAnimate to sequence the animation steps.
 	// We'll position the view at the center of the click position, by using the center property).
-	var anim_1 = Titanium.UI.createAnimation({
+	e.source.ripple.anim_1 = Titanium.UI.createAnimation({
 		center : {
 			x : _x,
 			y : _y
@@ -144,30 +150,44 @@ function RippleEffect(e) {
 		transform : Ti.UI.create2DMatrix().scale(20 / maxHeightWidth)
 	});
 
-	anim_1.addEventListener('complete', function() {
-		ripple.animate(anim_2);
+	e.source.ripple.anim_1.addEventListener('complete', function() {
+		if(e.source.ripple && e.source.ripple.anim_2){
+			e.source.ripple.animate(e.source.ripple.anim_2);
+		}
 	});
 
-	var anim_2 = Titanium.UI.createAnimation({
+	e.source.ripple.anim_2 = Titanium.UI.createAnimation({
 		curve : Ti.UI.ANIMATION_CURVE_EASE_IN,
-		duration : 300,
+		duration : 250,
 		opacity : 0.0,
 		transform : Ti.UI.create2DMatrix().scale((maxHeightWidth * 2) / minHeightWidth)
 	});
 
-	anim_2.addEventListener('complete', function() {
-		ripple.animate(anim_3);
+	e.source.ripple.anim_2.addEventListener('complete', function() {
+		if(e.source.ripple && e.source.ripple.anim_3){
+			try{
+				e.source.ripple.animate(e.source.ripple.anim_3);
+			}catch(e){
+				Titanium.API.error(e);
+			}
+		}
 	});
 
-	var anim_3 = Titanium.UI.createAnimation({
+	e.source.ripple.anim_3 = Titanium.UI.createAnimation({
 		opacity : 0.0,
 		duration : 100,
 		curve : Ti.UI.ANIMATION_CURVE_LINEAR
 	});
 
-	anim_3.addEventListener('complete', function() {
-		e.source.remove(ripple);
+	e.source.ripple.anim_3.addEventListener('complete', function() {
+		if(e && e.source){
+			e.source.touchEnabled = true;
+			e.source.remove(e.source.ripple);
+			e.source.ripple = null;
+		}
 	});
-
-	ripple.animate(anim_1);
+	
+	if(e.source.ripple && e.source.ripple.anim_1){
+		e.source.ripple.animate(e.source.ripple.anim_1);
+	}
 };
